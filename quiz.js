@@ -26,6 +26,32 @@ let answered=false;
 let timeLeft=30;
 let timerInterval;
 
+/*========== THEME ==========*/
+const themeBtn=document.getElementById("theme-btn");
+
+const savedTheme=localStorage.getItem("theme");
+
+if(savedTheme==="light"){
+document.body.classList.add("light-theme");
+themeBtn.innerHTML='<i class="fa-solid fa-sun"></i>';
+}else{
+themeBtn.innerHTML='<i class="fa-solid fa-moon"></i>';
+}
+
+themeBtn.addEventListener("click",()=>{
+
+document.body.classList.toggle("light-theme");
+
+if(document.body.classList.contains("light-theme")){
+localStorage.setItem("theme","light");
+themeBtn.innerHTML='<i class="fa-solid fa-sun"></i>';
+}else{
+localStorage.setItem("theme","dark");
+themeBtn.innerHTML='<i class="fa-solid fa-moon"></i>';
+}
+
+});
+
 /*========== CATEGORY ==========*/
 categoryBtns.forEach(btn=>{
 btn.addEventListener("click",()=>{

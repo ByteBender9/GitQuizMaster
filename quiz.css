@@ -464,3 +464,40 @@ font-size:2rem;
 }
 
 }
+
+.light-theme{
+--bg:#f8fafc;
+--surface:#ffffff;
+--surface-2:#f1f5f9;
+--text:#0f172a;
+--text-light:#475569;
+--glass:rgba(255,255,255,.75);
+--border:rgba(15,23,42,.08);
+}
+
+.light-theme body{
+background:var(--bg);
+color:var(--text);
+}
+
+.light-theme .quiz-start-card,
+.light-theme .quiz-container,
+.light-theme .result-card{
+background:rgba(255,255,255,.75);
+}
+
+.light-theme .option-btn{
+background:#fff;
+}
+
+.light-theme .progress{
+background:#dbe4ef;
+}
+
+.light-theme .timer{
+background:#eef2f7;
+}
+
+.light-theme .back-home{
+background:#fff;
+}
