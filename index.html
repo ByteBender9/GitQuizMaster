@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GitMaster | Learn Git & GitHub Interactively</title>
+
+    <meta name="description"
+        content="Master Git & GitHub through interactive quizzes, command challenges, visual learning paths, and real-world practice.">
+
+    <meta name="keywords"
+        content="Git, GitHub, Git Quiz, Git Learning, Version Control, Developer, HTML CSS JavaScript">
+
+    <meta name="author" content="Kushal Sarkar">
+
+    <link rel="icon" href="assets/icons/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+
+    <div class="gradient-bg"></div>
+
+    <div class="blur blur-one"></div>
+    <div class="blur blur-two"></div>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+
+                <div class="logo-icon">
+                    <i class="fab fa-git-alt"></i>
+                </div>
+
+                <div class="logo-text">
+                    <h2>GitMaster</h2>
+                    <span>Learn Version Control</span>
+                </div>
+
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="#">Learn</a></li>
+
+                <li><a href="quiz.html">Quiz</a></li>
+
+                <li><a href="#">Practice</a></li>
+
+                <li><a href="#">About</a></li>
+
+            </ul>
+
+            <div class="nav-actions">
+
+                <button id="theme-btn">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+                <button class="menu-btn">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+
+                🚀 Interactive Git Learning Platform
+
+            </span>
+
+            <h1>
+
+                Learn
+                <span>Git & GitHub</span>
+
+                Through Interactive Practice
+
+            </h1>
+
+            <p>
+
+                Build confidence with hands-on quizzes,
+                command challenges, learning paths,
+                and real-world Git workflows designed
+                for beginners and aspiring developers.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="quiz.html" class="path-btn">
+
+                    Start Learning
+
+                </a>
+
+                <a href="quiz.html" class="btn primary">
+
+                    Take Quiz
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Hero Illustration -->
+
+        <div class="hero-visual">
+
+            <div class="git-card">
+
+                <div class="terminal">
+
+                    <span>$ git init</span>
+
+                    <span>$ git add .</span>
+
+                    <span>$ git commit -m "First Commit"</span>
+
+                    <span>$ git push origin main</span>
+
+                </div>
+
+                <div class="git-graph">
+
+                    <div class="branch"></div>
+
+                    <div class="node"></div>
+
+                    <div class="node"></div>
+
+                    <div class="node"></div>
+
+                    <div class="node"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <h2>150+</h2>
+
+            <p>Quiz Questions</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>8</h2>
+
+            <p>Learning Modules</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>20+</h2>
+
+            <p>Command Challenges</p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>100%</h2>
+
+            <p>Free Learning</p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= LEARNING ROADMAP ================= -->
+
+<section class="roadmap" id="learn">
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+            Learning Path
+        </span>
+
+        <h2>Master Git Step by Step</h2>
+
+        <p>
+            Follow a structured roadmap from Git basics to advanced GitHub
+            collaboration.
+        </p>
+
+    </div>
+
+    <div class="roadmap-container">
+
+        <div class="roadmap-card">
+
+            <div class="roadmap-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <h3>Git Basics</h3>
+
+            <p>
+                Learn what Git is, why developers use it,
+                and install Git on your computer.
+            </p>
+
+            <span>01</span>
+
+        </div>
+
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-card">
+
+            <div class="roadmap-icon">
+                <i class="fa-solid fa-terminal"></i>
+            </div>
+
+            <h3>Essential Commands</h3>
+
+            <p>
+                Understand git init, clone, add, status,
+                commit, and log with practical examples.
+            </p>
+
+            <span>02</span>
+
+        </div>
+
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-card">
+
+            <div class="roadmap-icon">
+                <i class="fa-solid fa-code-branch"></i>
+            </div>
+
+            <h3>Branching</h3>
+
+            <p>
+                Create feature branches,
+                merge code safely,
+                and resolve conflicts.
+            </p>
+
+            <span>03</span>
+
+        </div>
+
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-card">
+
+            <div class="roadmap-icon">
+                <i class="fa-brands fa-github"></i>
+            </div>
+
+            <h3>GitHub Workflow</h3>
+
+            <p>
+                Push projects,
+                create pull requests,
+                review code,
+                and collaborate.
+            </p>
+
+            <span>04</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY GITMASTER ================= -->
+
+<section class="features">
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+
+            Why Choose GitMaster
+
+        </span>
+
+        <h2>Learn Faster with Interactive Practice</h2>
+
+        <p>
+            Everything you need to understand Git and GitHub
+            in one place.
+        </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-gamepad"></i>
+
+            <h3>Interactive Quizzes</h3>
+
+            <p>
+                Practice concepts through engaging quizzes with
+                instant feedback.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-keyboard"></i>
+
+            <h3>Command Challenges</h3>
+
+            <p>
+                Type real Git commands instead of simply memorizing
+                them.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <h3>Track Progress</h3>
+
+            <p>
+                Save your best scores and monitor your learning
+                journey.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-award"></i>
+
+            <h3>Achievements</h3>
+
+            <p>
+                Unlock badges as you complete quizzes
+                and learning modules.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= LEARNING ROADMAP ================= -->
+
+<section class="roadmap" id="learn">
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+            Learning Path
+        </span>
+
+        <h2>Master Git Step by Step</h2>
+
+        <p>
+            Follow a structured roadmap from Git basics to advanced GitHub
+            collaboration.
+        </p>
+
+    </div>
+
+    <div class="roadmap-container">
+
+        <div class="roadmap-card">
+
+            <div class="roadmap-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <h3>Git Basics</h3>
+
+            <p>
+                Learn what Git is, why developers use it,
+                and install Git on your computer.
+            </p>
+
+            <span>01</span>
+
+        </div>
+
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-card">
+
+            <div class="roadmap-icon">
+                <i class="fa-solid fa-terminal"></i>
+            </div>
+
+            <h3>Essential Commands</h3>
+
+            <p>
+                Understand git init, clone, add, status,
+                commit, and log with practical examples.
+            </p>
+
+            <span>02</span>
+
+        </div>
+
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-card">
+
+            <div class="roadmap-icon">
+                <i class="fa-solid fa-code-branch"></i>
+            </div>
+
+            <h3>Branching</h3>
+
+            <p>
+                Create feature branches,
+                merge code safely,
+                and resolve conflicts.
+            </p>
+
+            <span>03</span>
+
+        </div>
+
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-card">
+
+            <div class="roadmap-icon">
+                <i class="fa-brands fa-github"></i>
+            </div>
+
+            <h3>GitHub Workflow</h3>
+
+            <p>
+                Push projects,
+                create pull requests,
+                review code,
+                and collaborate.
+            </p>
+
+            <span>04</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY GITMASTER ================= -->
+
+<section class="features">
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+
+            Why Choose GitMaster
+
+        </span>
+
+        <h2>Learn Faster with Interactive Practice</h2>
+
+        <p>
+            Everything you need to understand Git and GitHub
+            in one place.
+        </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-gamepad"></i>
+
+            <h3>Interactive Quizzes</h3>
+
+            <p>
+                Practice concepts through engaging quizzes with
+                instant feedback.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-keyboard"></i>
+
+            <h3>Command Challenges</h3>
+
+            <p>
+                Type real Git commands instead of simply memorizing
+                them.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <h3>Track Progress</h3>
+
+            <p>
+                Save your best scores and monitor your learning
+                journey.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-award"></i>
+
+            <h3>Achievements</h3>
+
+            <p>
+                Unlock badges as you complete quizzes
+                and learning modules.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PROGRESS DASHBOARD ================= -->
+
+<section class="dashboard">
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+            Your Progress
+        </span>
+
+        <h2>Track Your Learning Journey</h2>
+
+        <p>
+            Stay motivated by tracking your achievements,
+            completed quizzes, and learning streak.
+        </p>
+
+    </div>
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+
+            <i class="fa-solid fa-trophy"></i>
+
+            <h3>Best Score</h3>
+
+            <span>95%</span>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <i class="fa-solid fa-fire"></i>
+
+            <h3>Current Streak</h3>
+
+            <span>12 Days</span>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <h3>Questions Solved</h3>
+
+            <span>150+</span>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <i class="fa-solid fa-award"></i>
+
+            <h3>Achievements</h3>
+
+            <span>8 Unlocked</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= POPULAR COMMANDS ================= -->
+
+<section class="commands">
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+            Quick Reference
+        </span>
+
+        <h2>Popular Git Commands</h2>
+
+        <p>
+            A few commands every developer should know.
+        </p>
+
+    </div>
+
+    <div class="command-grid">
+
+        <div class="command-card">
+            <code>git init</code>
+            <p>Initialize a new Git repository.</p>
+        </div>
+
+        <div class="command-card">
+            <code>git clone</code>
+            <p>Download an existing repository.</p>
+        </div>
+
+        <div class="command-card">
+            <code>git add .</code>
+            <p>Stage all modified files.</p>
+        </div>
+
+        <div class="command-card">
+            <code>git commit -m "message"</code>
+            <p>Save changes with a commit.</p>
+        </div>
+
+        <div class="command-card">
+            <code>git push</code>
+            <p>Upload commits to GitHub.</p>
+        </div>
+
+        <div class="command-card">
+            <code>git pull</code>
+            <p>Fetch and merge remote changes.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FAQ ================= -->
+
+<section class="faq">
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+            FAQ
+        </span>
+
+        <h2>Frequently Asked Questions</h2>
+
+    </div>
+
+    <div class="faq-container">
+
+        <div class="faq-item">
+            <h3>Do I need Git installed?</h3>
+            <p>
+                No. You can learn the concepts first and install Git later
+                when you're ready to practice locally.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is GitMaster free?</h3>
+            <p>
+                Yes. All quizzes and learning resources are completely free.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can beginners use this platform?</h3>
+            <p>
+                Absolutely. GitMaster is designed for complete beginners and
+                gradually introduces advanced topics.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+
+            <i class="fab fa-git-alt"></i>
+
+            <h2>GitMaster</h2>
+
+            <p>
+                Learn Git & GitHub through interactive lessons,
+                quizzes, and practical exercises.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <a href="#">Home</a>
+            <a href="#">Learn</a>
+            <a href="#">Quiz</a>
+            <a href="#">Practice</a>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Resources</h3>
+
+            <a href="#">Documentation</a>
+            <a href="#">GitHub</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 GitMaster. Built with ❤️ using HTML, CSS & JavaScript.
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- Back To Top -->
+
+<button id="scrollTop">
+
+    <i class="fas fa-arrow-up"></i>
+
+</button>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
