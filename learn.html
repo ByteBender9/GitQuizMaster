@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Learn Git | GitMaster</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="learn.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="container">
+
+            <a href="index.html" class="logo">
+
+                GitMaster
+
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="learn.html" class="active">Learn</a></li>
+
+                <li><a href="quiz.html">Quiz</a></li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="learn-hero">
+
+    <div class="container">
+
+        <span class="section-tag">
+
+            Git Learning
+
+        </span>
+
+        <h1>
+
+            Learn Git Step by Step
+
+        </h1>
+
+        <p>
+
+            Master Git from the fundamentals to advanced workflows through
+            structured lessons, practical examples, and real-world commands.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= ROADMAP ================= -->
+
+<section class="roadmap">
+
+    <div class="container">
+
+        <h2>Learning Roadmap</h2>
+
+        <p class="section-description">
+            Follow the topics in order to build a solid understanding of Git.
+        </p>
+
+        <div class="roadmap-grid">
+
+            <a href="#lesson1" class="roadmap-card">
+                <i class="fa-solid fa-circle-1"></i>
+                <h3>Introduction to Git</h3>
+                <p>Understand what Git is and why developers use it.</p>
+            </a>
+
+            <a href="#lesson2" class="roadmap-card">
+                <i class="fa-solid fa-circle-2"></i>
+                <h3>Git Installation</h3>
+                <p>Install Git and configure your development environment.</p>
+            </a>
+
+            <a href="#lesson3" class="roadmap-card">
+                <i class="fa-solid fa-circle-3"></i>
+                <h3>Basic Commands</h3>
+                <p>Learn git init, add, commit, status and log.</p>
+            </a>
+
+            <a href="#lesson4" class="roadmap-card">
+                <i class="fa-solid fa-circle-4"></i>
+                <h3>Branches</h3>
+                <p>Create, switch and merge branches.</p>
+            </a>
+
+            <a href="#lesson5" class="roadmap-card">
+                <i class="fa-solid fa-circle-5"></i>
+                <h3>Working with GitHub</h3>
+                <p>Push, pull, clone and collaborate using GitHub.</p>
+            </a>
+
+            <a href="#lesson6" class="roadmap-card">
+                <i class="fa-solid fa-circle-6"></i>
+                <h3>Advanced Git</h3>
+                <p>Explore stash, rebase, cherry-pick and more.</p>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= INTRODUCTION ================= -->
+
+<section id="lesson1" class="lesson-section">
+
+    <div class="container">
+
+        <span class="section-tag">
+            Lesson 1
+        </span>
+
+        <h2>Introduction to Git</h2>
+
+        <p class="section-description">
+            Before learning Git commands, it's important to understand what Git is and why developers use it.
+        </p>
+
+        <div class="lesson-card">
+
+            <h3>📖 What is Git?</h3>
+
+            <p>
+                Git is a distributed version control system that helps developers
+                track changes in their source code. It allows multiple developers
+                to work together efficiently while maintaining a complete history
+                of every change made to a project.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>🎯 Why Use Git?</h3>
+
+            <ul class="lesson-list">
+
+                <li>Track every change made to your project.</li>
+
+                <li>Work safely without losing previous versions.</li>
+
+                <li>Collaborate with other developers.</li>
+
+                <li>Manage multiple features using branches.</li>
+
+                <li>Integrate easily with GitHub.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>⚡ Key Features</h3>
+
+            <div class="feature-grid">
+
+                <div class="feature-item">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <h4>Version History</h4>
+                    <p>Restore previous versions anytime.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fa-solid fa-code-branch"></i>
+                    <h4>Branching</h4>
+                    <p>Develop new features independently.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fa-solid fa-users"></i>
+                    <h4>Collaboration</h4>
+                    <p>Multiple developers can work together.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Backup</h4>
+                    <p>Your complete project history is preserved.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= LESSON 2 ================= -->
+
+<section id="lesson1" class="lesson-section">
+
+    <div class="container">
+
+        <span class="section-tag">
+            Lesson 2
+        </span>
+
+        <h2>Installing Git & Basic Commands</h2>
+
+        <p class="section-description">
+            Before using Git, you need to install it and configure your identity.
+        </p>
+
+        <div class="lesson-card">
+
+            <h3>💻 Install Git</h3>
+
+            <p>
+
+                Download Git from the official website and install it on your
+                operating system.
+
+            </p>
+
+            <a href="https://git-scm.com/downloads"
+               target="_blank"
+               class="btn">
+
+                Download Git
+
+            </a>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>⚙ Configure Git</h3>
+
+            <p>
+                Set your username and email. These details will appear in every commit.
+            </p>
+
+<pre><code>git config --global user.name "Your Name"
+
+git config --global user.email "your@email.com"</code></pre>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>📂 Create Your First Repository</h3>
+
+            <p>
+
+                Create a new project folder and initialize Git.
+
+            </p>
+
+<pre><code>mkdir MyProject
+
+cd MyProject
+
+git init</code></pre>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>📌 Check Repository Status</h3>
+
+            <p>
+
+                View the current state of your project.
+
+            </p>
+
+<pre><code>git status</code></pre>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>➕ Stage Files</h3>
+
+            <p>
+
+                Add files to the staging area.
+
+            </p>
+
+<pre><code>git add index.html
+
+git add .
+
+git add style.css</code></pre>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>💾 Commit Changes</h3>
+
+            <p>
+
+                Save your work permanently.
+
+            </p>
+
+<pre><code>git commit -m "Initial Commit"</code></pre>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= LESSON 3 ================= -->
+
+<section id="lesson3" class="lesson-section">
+
+    <div class="container">
+
+        <span class="section-tag">Lesson 3</span>
+
+        <h2>Repository Management</h2>
+
+        <p class="section-description">
+            Learn how to inspect your repository, restore changes, remove files, and manage your project history.
+        </p>
+
+        <div class="lesson-card">
+
+            <h3>📜 View Commit History</h3>
+
+            <p>Display all commits made in your repository.</p>
+
+<pre><code>git log</code></pre>
+
+            <p>
+                Useful for checking previous commits, commit IDs, authors, and dates.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>🔍 View Changes</h3>
+
+            <p>Compare modified files with the last commit.</p>
+
+<pre><code>git diff</code></pre>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>♻ Restore a File</h3>
+
+            <p>Discard local changes made to a file.</p>
+
+<pre><code>git restore index.html</code></pre>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>🗑 Remove Files</h3>
+
+            <p>Delete a file and stage the deletion.</p>
+
+<pre><code>git rm file.txt</code></pre>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>📦 Rename Files</h3>
+
+            <p>Rename a tracked file.</p>
+
+<pre><code>git mv oldname.txt newname.txt</code></pre>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>⏪ Reset Staging Area</h3>
+
+            <p>Unstage a file without deleting your work.</p>
+
+<pre><code>git reset index.html</code></pre>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= LESSON 4 ================= -->
+
+<section id="lesson4" class="lesson-section">
+
+    <div class="container">
+
+        <span class="section-tag">Lesson 4</span>
+
+        <h2>Branching & Merging</h2>
+
+        <p class="section-description">
+            Branches allow developers to build new features safely without affecting the main project.
+        </p>
+
+        <div class="lesson-card">
+
+            <h3>🌿 Create a Branch</h3>
+
+<pre><code>git branch feature-login</code></pre>
+
+            <p>
+                Creates a new branch named <strong>feature-login</strong>.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>🔀 Switch Branch</h3>
+
+<pre><code>git checkout feature-login</code></pre>
+
+            <p>
+                Move from the current branch to another branch.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>⚡ Create & Switch Together</h3>
+
+<pre><code>git checkout -b feature-navbar</code></pre>
+
+            <p>
+                Creates a new branch and switches to it immediately.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>📋 List All Branches</h3>
+
+<pre><code>git branch</code></pre>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>🔗 Merge Branch</h3>
+
+<pre><code>git checkout main
+
+git merge feature-login</code></pre>
+
+            <p>
+                Merge completed work into the main branch.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>❌ Delete Branch</h3>
+
+<pre><code>git branch -d feature-login</code></pre>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>📌 Best Practices</h3>
+
+            <ul class="lesson-list">
+
+                <li>Create a new branch for every feature.</li>
+
+                <li>Keep branch names meaningful.</li>
+
+                <li>Merge only after testing.</li>
+
+                <li>Delete branches after merging.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= LESSON 5 ================= -->
+
+<section id="lesson5" class="lesson-section">
+
+    <div class="container">
+
+        <span class="section-tag">Lesson 5</span>
+
+        <h2>Working with GitHub</h2>
+
+        <p class="section-description">
+            Learn how to connect your local Git repository with GitHub and collaborate online.
+        </p>
+
+        <div class="lesson-card">
+
+            <h3>📥 Clone a Repository</h3>
+
+<pre><code>git clone https://github.com/username/project.git</code></pre>
+
+            <p>
+                Downloads an existing GitHub repository to your computer.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>🔗 Connect Local Repository</h3>
+
+<pre><code>git remote add origin https://github.com/username/project.git</code></pre>
+
+            <p>
+                Links your local project to a remote GitHub repository.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>⬆ Push Changes</h3>
+
+<pre><code>git push -u origin main</code></pre>
+
+            <p>
+                Upload your commits to GitHub.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>⬇ Pull Latest Changes</h3>
+
+<pre><code>git pull origin main</code></pre>
+
+            <p>
+                Download and merge the latest changes from GitHub.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>🔄 Fetch Changes</h3>
+
+<pre><code>git fetch origin</code></pre>
+
+            <p>
+                Downloads new commits without merging them.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>🌍 View Remote Repository</h3>
+
+<pre><code>git remote -v</code></pre>
+
+            <p>
+                Displays all configured remote repositories.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= LESSON 6 ================= -->
+
+<section id="lesson6" class="lesson-section">
+
+    <div class="container">
+
+        <span class="section-tag">Lesson 6</span>
+
+        <h2>Advanced Git</h2>
+
+        <p class="section-description">
+            Master powerful Git features used in professional software development.
+        </p>
+
+        <div class="lesson-card">
+
+            <h3>📦 Save Work Temporarily</h3>
+
+<pre><code>git stash</code></pre>
+
+            <p>
+                Stores your uncommitted changes temporarily.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>📤 Restore Stashed Work</h3>
+
+<pre><code>git stash pop</code></pre>
+
+            <p>
+                Restores the latest stashed changes.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>🔀 Rebase Branch</h3>
+
+<pre><code>git rebase main</code></pre>
+
+            <p>
+                Replays your branch commits on top of another branch for a cleaner history.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>🍒 Cherry Pick</h3>
+
+<pre><code>git cherry-pick commit_id</code></pre>
+
+            <p>
+                Apply a specific commit from another branch.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>🏷 Create a Tag</h3>
+
+<pre><code>git tag v1.0</code></pre>
+
+            <p>
+                Mark an important release or version.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>↩ Revert a Commit</h3>
+
+<pre><code>git revert commit_id</code></pre>
+
+            <p>
+                Undo a commit without rewriting project history.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <h3>💡 Tips</h3>
+
+            <ul class="lesson-list">
+
+                <li>Commit small, meaningful changes.</li>
+
+                <li>Write clear commit messages.</li>
+
+                <li>Pull before pushing.</li>
+
+                <li>Use branches for new features.</li>
+
+                <li>Never force push to shared branches unless necessary.</li>
+
+                <li>Keep your repository clean and organized.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="container">
+
+        <p>
+
+            © 2026 GitMaster • Learn Git the Smart Way
+
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
