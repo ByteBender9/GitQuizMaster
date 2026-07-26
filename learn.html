@@ -26,83 +26,56 @@
 <body>
 
 <!-- ================= NAVBAR ================= -->
-
 <header>
-
     <nav class="navbar">
-
-        <div class="container">
-
-            <a href="index.html" class="logo">
-
-                GitMaster
-
-            </a>
-
-            <ul class="nav-links">
-
-                <li><a href="index.html">Home</a></li>
-
-                <li><a href="learn.html" class="active">Learn</a></li>
-
-                <li><a href="quiz.html">Quiz</a></li>
-
-            </ul>
-
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <i class="fab fa-git-alt"></i>
+            </div>
+            <div class="logo-text">
+                <h2>GitMaster</h2>
+                <span>Learn Git</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="learn.html" class="active">Learn</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="theme-btn">
+                i class="fas fa-moon"></i>
+            </button>
         </div>
-
     </nav>
-
 </header>
 
-
 <!-- ================= HERO ================= -->
-
 <section class="learn-hero">
-
     <div class="container">
-
         <div class="quiz-top">
-
             <div>
-
                 <span class="section-tag">Git Learning</span>
-
                 <h1>Learn Git Step by Step</h1>
-
                 <p>
                     Master Git from the fundamentals to advanced workflows through structured lessons, practical examples, and real-world commands.
                 </p>
-
             </div>
-
             <a href="index.html" class="back-home">
-
                 <i class="fa-solid fa-arrow-left"></i>
-
                 Home
-
             </a>
-
         </div>
-
     </div>
-
 </section>
 <!-- ================= ROADMAP ================= -->
-
 <section class="roadmap">
-
     <div class="container">
-
         <h2>Learning Roadmap</h2>
-
         <p class="section-description">
             Follow the topics in order to build a solid understanding of Git.
         </p>
-
         <div class="roadmap-grid">
-
             <a href="#lesson1" class="roadmap-card">
                 <i class="fa-solid fa-circle-1"></i>
                 <h3>Introduction to Git</h3>
@@ -138,68 +111,48 @@
                 <h3>Advanced Git</h3>
                 <p>Explore stash, rebase, cherry-pick and more.</p>
             </a>
-
         </div>
-
     </div>
-
 </section>
 
 <!-- ================= INTRODUCTION ================= -->
 
 <section id="lesson1" class="lesson-section">
-
     <div class="container">
-
         <span class="section-tag">
             Lesson 1
         </span>
 
         <h2>Introduction to Git</h2>
-
         <p class="section-description">
             Before learning Git commands, it's important to understand what Git is and why developers use it.
         </p>
 
         <div class="lesson-card">
-
             <h3>📖 What is Git?</h3>
-
             <p>
                 Git is a distributed version control system that helps developers
                 track changes in their source code. It allows multiple developers
                 to work together efficiently while maintaining a complete history
                 of every change made to a project.
             </p>
-
         </div>
 
         <div class="lesson-card">
-
             <h3>🎯 Why Use Git?</h3>
-
             <ul class="lesson-list">
-
                 <li>Track every change made to your project.</li>
-
                 <li>Work safely without losing previous versions.</li>
-
                 <li>Collaborate with other developers.</li>
-
                 <li>Manage multiple features using branches.</li>
-
                 <li>Integrate easily with GitHub.</li>
-
             </ul>
-
         </div>
 
         <div class="lesson-card">
-
             <h3>⚡ Key Features</h3>
 
             <div class="feature-grid">
-
                 <div class="feature-item">
                     <i class="fa-solid fa-clock-rotate-left"></i>
                     <h4>Version History</h4>
@@ -223,131 +176,81 @@
                     <h4>Backup</h4>
                     <p>Your complete project history is preserved.</p>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 <!-- ================= LESSON 2 ================= -->
 
-<section id="lesson1" class="lesson-section">
-
+<section id="lesson2" class="lesson-section">
     <div class="container">
-
         <span class="section-tag">
             Lesson 2
         </span>
 
         <h2>Installing Git & Basic Commands</h2>
-
         <p class="section-description">
             Before using Git, you need to install it and configure your identity.
         </p>
 
         <div class="lesson-card">
-
             <h3>💻 Install Git</h3>
-
             <p>
-
                 Download Git from the official website and install it on your
                 operating system.
-
             </p>
-
             <a href="https://git-scm.com/downloads"
                target="_blank"
                class="btn">
-
                 Download Git
-
             </a>
-
         </div>
 
         <div class="lesson-card">
-
             <h3>⚙ Configure Git</h3>
-
             <p>
                 Set your username and email. These details will appear in every commit.
             </p>
-
 <pre><code>git config --global user.name "Your Name"
-
 git config --global user.email "your@email.com"</code></pre>
-
         </div>
 
         <div class="lesson-card">
-
             <h3>📂 Create Your First Repository</h3>
-
             <p>
-
                 Create a new project folder and initialize Git.
-
             </p>
-
 <pre><code>mkdir MyProject
-
 cd MyProject
-
 git init</code></pre>
-
         </div>
 
         <div class="lesson-card">
-
             <h3>📌 Check Repository Status</h3>
-
             <p>
-
                 View the current state of your project.
-
             </p>
-
 <pre><code>git status</code></pre>
-
         </div>
 
         <div class="lesson-card">
-
             <h3>➕ Stage Files</h3>
-
             <p>
-
                 Add files to the staging area.
-
             </p>
-
 <pre><code>git add index.html
-
 git add .
-
 git add style.css</code></pre>
-
         </div>
 
         <div class="lesson-card">
-
             <h3>💾 Commit Changes</h3>
-
             <p>
-
                 Save your work permanently.
-
             </p>
-
 <pre><code>git commit -m "Initial Commit"</code></pre>
-
         </div>
-
     </div>
-
 </section>
 <!-- ================= LESSON 3 ================= -->
 
@@ -748,6 +651,7 @@ git merge feature-login</code></pre>
 </footer>
 
 <script src="script.js"></script>
+
 
 </body>
 
