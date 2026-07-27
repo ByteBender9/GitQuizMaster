@@ -323,9 +323,15 @@ header{
 }
 
 .hero-buttons{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
+display:flex;
+flex-direction:column;
+gap:18px;
+max-width:520px;
+}
+
+.hero-buttons .btn{
+width:100%;
+justify-content:center;
 }
 
 .hero-visual{
