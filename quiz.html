@@ -1,248 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GitMaster | Quiz</title>
-
-<meta name="description" content="Test your Git & GitHub knowledge with interactive quizzes.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="quiz.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitMaster | Quiz</title>
+    <meta name="description" content="Test your Git & GitHub knowledge with interactive quizzes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
 </head>
-
 <body>
+    <div class="gradient-bg"></div>
+    <div class="blur blur-one"></div>
+    <div class="blur blur-two"></div>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fab fa-git-alt"></i>
+                </div>
 
-<div class="gradient-bg"></div>
+                <div class="logo-text">
+                    <h2>GitMaster</h2>
+                    <span>Quiz Challenge</span>
+                </div>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quiz.html" class="active">Quiz</a></li>
+            </ul>
 
-<div class="blur blur-one"></div>
-<div class="blur blur-two"></div>
+            <div class="nav-actions">
+                <button id="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-<header>
+    <section class="quiz-page">
+        <div class="quiz-top">
+            <div>
+                <h1>Git & GitHub Quiz</h1>
+                <p>Test your knowledge with interactive questions.</p>
+            </div>
+            <a href="index.html" class="back-home">
+                <i class="fa-solid fa-arrow-left"></i>
+                Home
+            </a>
+        </div>
 
-<nav class="navbar">
+        <div class="quiz-start-card">
+            <h2>Select Category</h2>
 
-<a href="index.html" class="logo">
+            <div class="category-grid">
+                <button class="category-btn" data-category="Git Basics">
+                    <i class="fa-solid fa-seedling"></i>
+                    Git Basics
+                </button>
 
-<div class="logo-icon">
-<i class="fab fa-git-alt"></i>
-</div>
+                <button class="category-btn" data-category="Git Commands">
+                    <i class="fa-solid fa-terminal"></i>
+                    Git Commands
+                </button>
 
-<div class="logo-text">
-<h2>GitMaster</h2>
-<span>Quiz Challenge</span>
-</div>
+                <button class="category-btn" data-category="Branching">
+                    <i class="fa-solid fa-code-branch"></i>
+                    Branching
+                </button>
 
-</a>
+                <button class="category-btn" data-category="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                    GitHub
+                </button>
+            </div>
+            <h2>Select Difficulty</h2>
 
-<ul class="nav-links">
+            <div class="difficulty-grid">
+                <button class="difficulty-btn" data-level="Beginner">
+                    Beginner
+                </button>
 
-<li><a href="index.html">Home</a></li>
-<li><a href="quiz.html" class="active">Quiz</a></li>
+                <button class="difficulty-btn" data-level="Intermediate">
+                    Intermediate
+                </button>
 
-</ul>
-
-<div class="nav-actions">
-
-<button id="theme-btn">
-<i class="fas fa-moon"></i>
-</button>
-
-</div>
-
-</nav>
-
-</header>
-
-<section class="quiz-page">
-
-<div class="quiz-top">
-
-<div>
-
-<h1>Git & GitHub Quiz</h1>
-
-<p>
-Test your knowledge with interactive questions.
-</p>
-
-</div>
-
-<a href="index.html" class="back-home">
-
-<i class="fa-solid fa-arrow-left"></i>
-
-Home
-
-</a>
-
-</div>
-
-<div class="quiz-start-card">
-
-<h2>Select Category</h2>
-
-<div class="category-grid">
-
-<button class="category-btn" data-category="Git Basics">
-
-<i class="fa-solid fa-seedling"></i>
-
-Git Basics
-
-</button>
-
-<button class="category-btn" data-category="Git Commands">
-
-<i class="fa-solid fa-terminal"></i>
-
-Git Commands
-
-</button>
-
-<button class="category-btn" data-category="Branching">
-
-<i class="fa-solid fa-code-branch"></i>
-
-Branching
-
-</button>
-
-<button class="category-btn" data-category="GitHub">
-
-<i class="fa-brands fa-github"></i>
-
-GitHub
-
-</button>
-
-</div>
-
-<h2>Select Difficulty</h2>
-
-<div class="difficulty-grid">
-
-<button class="difficulty-btn" data-level="Beginner">
-Beginner
-</button>
-
-<button class="difficulty-btn" data-level="Intermediate">
-Intermediate
-</button>
-
-<button class="difficulty-btn" data-level="Advanced">
-Advanced
-</button>
-
-</div>
-
-<button id="startQuiz" class="btn primary">
-
-Start Quiz
-
-</button>
-
-</div>
-
-</section>
+                <button class="difficulty-btn" data-level="Advanced">
+                    Advanced
+                </button>
+            </div>
+            <button id="startQuiz" class="btn primary">
+                Start Quiz
+            </button>
+        </div>
+    </section>
 
 <!--==================== QUIZ CONTAINER ====================-->
-
 <section class="quiz-container" id="quizContainer">
+    <div class="quiz-header">
+        <div class="quiz-details">
+            <span id="quizCategory">
+                Git Basics
+            </span>
+            <h2 id="questionCounter">
+                Question 1 / 20
+            </h2>
+        </div>
 
-<div class="quiz-header">
+        <div class="timer">
+            <i class="fa-solid fa-clock"></i>
+            <span id="timer">
+                30
+            </span>s
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="question-box">
+        <h2 id="questionText">
+            Question appears here...
+        </h2>
 
-<div class="quiz-details">
+        <div class="options" id="optionsContainer">
+            <button class="option-btn"></button>
+            <button class="option-btn"></button>
+            <button class="option-btn"></button>
+            <button class="option-btn"></button>
+        </div>
 
-<span id="quizCategory">
-Git Basics
-</span>
+        <div class="explanation" id="explanationBox">
+            <h3 id="answerStatus"></h3>
+            <p id="answerExplanation"></p>
+        </div>
 
-<h2 id="questionCounter">
-Question 1 / 20
-</h2>
+        <div class="quiz-actions">
+            <button id="prevQuestion" class="btn secondary">
+                <i class="fa-solid fa-arrow-left"></i>
+                Previous
+            </button>
 
-</div>
-
-<div class="timer">
-
-<i class="fa-solid fa-clock"></i>
-
-<span id="timer">
-30
-</span>s
-
-</div>
-
-</div>
-
-<div class="progress">
-
-<div class="progress-bar" id="progressBar"></div>
-
-</div>
-
-<div class="question-box">
-
-<h2 id="questionText">
-
-Question appears here...
-
-</h2>
-
-<div class="options" id="optionsContainer">
-
-<button class="option-btn"></button>
-
-<button class="option-btn"></button>
-
-<button class="option-btn"></button>
-
-<button class="option-btn"></button>
-
-</div>
-
-<div class="explanation" id="explanationBox">
-
-<h3 id="answerStatus"></h3>
-
-<p id="answerExplanation"></p>
-
-</div>
-
-<div class="quiz-actions">
-
-<button id="prevQuestion" class="btn secondary">
-
-<i class="fa-solid fa-arrow-left"></i>
-
-Previous
-
-</button>
-
-<button id="nextQuestion" class="btn primary">
-
-Next
-
-<i class="fa-solid fa-arrow-right"></i>
-
-</button>
-
-</div>
-
-</div>
-
+            <button id="nextQuestion" class="btn primary">
+                Next
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
 </section>
 
 <!--==================== RESULT ====================-->
@@ -337,8 +244,8 @@ Back Home
 <i class="fas fa-arrow-up"></i>
 </button>
 
-<script src="questions.js"></script>
-<script src="quiz.js"></script>
+<script src="js/questions.js"></script>
+<script src="js/quiz.js"></script>
 
 </body>
 </html>
