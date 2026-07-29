@@ -56,7 +56,7 @@ GitMaster
 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/GitMaster.git
+git clone https://github.com/ByteBender9/GitMaster.git
 ```
 
 2. Open the project folder.
