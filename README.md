@@ -121,7 +121,7 @@ GitMaster
 
 ### 📱 Mobile Learn Page
 
-![Mobile Learn](assets/Mob-learnpg.png)
+![Mobile Learn](assets/Mob-learnpage.png)
 
 ---
 
