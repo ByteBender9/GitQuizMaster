@@ -1,327 +1,327 @@
 /*========== ELEMENTS ==========*/
-const categoryBtns=document.querySelectorAll(".category-btn");
-const difficultyBtns=document.querySelectorAll(".difficulty-btn");
-const startBtn=document.getElementById("startQuiz");
-const quizPage=document.querySelector(".quiz-page");
-const quizContainer=document.getElementById("quizContainer");
-const resultContainer=document.getElementById("resultContainer");
+const categoryBtns = document.querySelectorAll(".category-btn");
+const difficultyBtns = document.querySelectorAll(".difficulty-btn");
+const startBtn = document.getElementById("startQuiz");
+const quizPage = document.querySelector(".quiz-page");
+const quizContainer = document.getElementById("quizContainer");
+const resultContainer = document.getElementById("resultContainer");
 
-const questionText=document.getElementById("questionText");
-const optionsContainer=document.getElementById("optionsContainer");
-const questionCounter=document.getElementById("questionCounter");
-const quizCategory=document.getElementById("quizCategory");
-const progressBar=document.getElementById("progressBar");
-const timer=document.getElementById("timer");
+const questionText = document.getElementById("questionText");
+const optionsContainer = document.getElementById("optionsContainer");
+const questionCounter = document.getElementById("questionCounter");
+const quizCategory = document.getElementById("quizCategory");
+const progressBar = document.getElementById("progressBar");
+const timer = document.getElementById("timer");
 
-const explanationBox=document.getElementById("explanationBox");
-const answerStatus=document.getElementById("answerStatus");
-const answerExplanation=document.getElementById("answerExplanation");
+const explanationBox = document.getElementById("explanationBox");
+const answerStatus = document.getElementById("answerStatus");
+const answerExplanation = document.getElementById("answerExplanation");
 
-let selectedCategory="";
-let selectedDifficulty="";
-let filteredQuestions=[];
-let currentQuestion=0;
-let score=0;
-let answered=false;
-let timeLeft=30;
+let selectedCategory = "";
+let selectedDifficulty = "";
+let filteredQuestions = [];
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+let timeLeft = 30;
 let timerInterval;
 
 /*========== THEME ==========*/
-const themeBtn=document.getElementById("theme-btn");
+const themeBtn = document.getElementById("theme-btn");
 
-const savedTheme=localStorage.getItem("theme");
+const savedTheme = localStorage.getItem("theme");
 
-if(savedTheme==="light"){
-document.body.classList.add("light-theme");
-themeBtn.innerHTML='<i class="fa-solid fa-sun"></i>';
-}else{
-themeBtn.innerHTML='<i class="fa-solid fa-moon"></i>';
+if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+    themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+} else {
+    themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
 }
 
-themeBtn.addEventListener("click",()=>{
+themeBtn.addEventListener("click", () => {
 
-document.body.classList.toggle("light-theme");
+    document.body.classList.toggle("light-theme");
 
-if(document.body.classList.contains("light-theme")){
-localStorage.setItem("theme","light");
-themeBtn.innerHTML='<i class="fa-solid fa-sun"></i>';
-}else{
-localStorage.setItem("theme","dark");
-themeBtn.innerHTML='<i class="fa-solid fa-moon"></i>';
-}
+    if (document.body.classList.contains("light-theme")) {
+        localStorage.setItem("theme", "light");
+        themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    } else {
+        localStorage.setItem("theme", "dark");
+        themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    }
 
 });
 
 /*========== CATEGORY ==========*/
-categoryBtns.forEach(btn=>{
-btn.addEventListener("click",()=>{
-categoryBtns.forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-selectedCategory=btn.dataset.category;
-});
+categoryBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        categoryBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        selectedCategory = btn.dataset.category;
+    });
 });
 
 /*========== DIFFICULTY ==========*/
-difficultyBtns.forEach(btn=>{
-btn.addEventListener("click",()=>{
-difficultyBtns.forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-selectedDifficulty=btn.dataset.level;
-});
+difficultyBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        difficultyBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        selectedDifficulty = btn.dataset.level;
+    });
 });
 
 /*========== START QUIZ ==========*/
-startBtn.addEventListener("click",()=>{
+startBtn.addEventListener("click", () => {
 
-if(selectedCategory===""){
-alert("Please select a category.");
-return;
-}
+    if (selectedCategory === "") {
+        alert("Please select a category.");
+        return;
+    }
 
-if(selectedDifficulty===""){
-alert("Please select a difficulty.");
-return;
-}
+    if (selectedDifficulty === "") {
+        alert("Please select a difficulty.");
+        return;
+    }
 
-filteredQuestions=quizData.filter(question=>
-question.category===selectedCategory&&
-question.difficulty===selectedDifficulty
-);
+    filteredQuestions = quizData.filter(question =>
+        question.category === selectedCategory &&
+        question.difficulty === selectedDifficulty
+    );
 
-if(filteredQuestions.length===0){
-alert("No questions found for this category.");
-return;
-}
+    if (filteredQuestions.length === 0) {
+        alert("No questions found for this category.");
+        return;
+    }
 
-quizPage.style.display="none";
-quizContainer.style.display="block";
+    quizPage.style.display = "none";
+    quizContainer.style.display = "block";
 
-currentQuestion=0;
-score=0;
+    currentQuestion = 0;
+    score = 0;
 
-loadQuestion();
+    loadQuestion();
 
 });
 
 /*========== LOAD QUESTION ==========*/
-function loadQuestion(){
+function loadQuestion() {
 
-answered=false;
+    answered = false;
 
-explanationBox.style.display="none";
+    explanationBox.style.display = "none";
 
-clearInterval(timerInterval);
+    clearInterval(timerInterval);
 
-timeLeft=30;
+    timeLeft = 30;
 
-timer.textContent=timeLeft;
+    timer.textContent = timeLeft;
 
-startTimer();
+    startTimer();
 
-const question=filteredQuestions[currentQuestion];
+    const question = filteredQuestions[currentQuestion];
 
-quizCategory.textContent=question.category;
+    quizCategory.textContent = question.category;
 
-questionCounter.textContent=`Question ${currentQuestion+1} / ${filteredQuestions.length}`;
+    questionCounter.textContent = `Question ${currentQuestion+1} / ${filteredQuestions.length}`;
 
-questionText.textContent=question.question;
+    questionText.textContent = question.question;
 
-progressBar.style.width=((currentQuestion+1)/filteredQuestions.length)*100+"%";
+    progressBar.style.width = ((currentQuestion + 1) / filteredQuestions.length) * 100 + "%";
 
-optionsContainer.innerHTML="";
+    optionsContainer.innerHTML = "";
 
-question.options.forEach((option,index)=>{
+    question.options.forEach((option, index) => {
 
-const button=document.createElement("button");
+        const button = document.createElement("button");
 
-button.className="option-btn";
+        button.className = "option-btn";
 
-button.textContent=option;
+        button.textContent = option;
 
-button.onclick=()=>selectAnswer(index);
+        button.onclick = () => selectAnswer(index);
 
-optionsContainer.appendChild(button);
+        optionsContainer.appendChild(button);
 
-});
+    });
 
 }
 
 /*========== TIMER ==========*/
-function startTimer(){
+function startTimer() {
 
-timerInterval=setInterval(()=>{
+    timerInterval = setInterval(() => {
 
-timeLeft--;
+        timeLeft--;
 
-timer.textContent=timeLeft;
+        timer.textContent = timeLeft;
 
-if(timeLeft<=0){
+        if (timeLeft <= 0) {
 
-clearInterval(timerInterval);
+            clearInterval(timerInterval);
 
-selectAnswer(-1);
+            selectAnswer(-1);
 
-}
+        }
 
-},1000);
+    }, 1000);
 
 }
 
 /*========== SELECT ANSWER ==========*/
-function selectAnswer(selectedIndex){
+function selectAnswer(selectedIndex) {
 
-if(answered) return;
+    if (answered) return;
 
-answered=true;
+    answered = true;
 
-clearInterval(timerInterval);
+    clearInterval(timerInterval);
 
-const question=filteredQuestions[currentQuestion];
+    const question = filteredQuestions[currentQuestion];
 
-const buttons=document.querySelectorAll(".option-btn");
+    const buttons = document.querySelectorAll(".option-btn");
 
-buttons.forEach((button,index)=>{
+    buttons.forEach((button, index) => {
 
-button.classList.add("disabled");
+        button.classList.add("disabled");
 
-if(index===question.answer){
+        if (index === question.answer) {
 
-button.classList.add("correct");
+            button.classList.add("correct");
 
-}
+        }
 
-if(selectedIndex===index&&selectedIndex!==question.answer){
+        if (selectedIndex === index && selectedIndex !== question.answer) {
 
-button.classList.add("wrong");
+            button.classList.add("wrong");
 
-}
+        }
 
-});
+    });
 
-if(selectedIndex===question.answer){
+    if (selectedIndex === question.answer) {
 
-score++;
+        score++;
 
-answerStatus.textContent="✅ Correct!";
+        answerStatus.textContent = "✅ Correct!";
 
-}else if(selectedIndex===-1){
+    } else if (selectedIndex === -1) {
 
-answerStatus.textContent="⏰ Time's Up!";
+        answerStatus.textContent = "⏰ Time's Up!";
 
-}else{
+    } else {
 
-answerStatus.textContent="❌ Incorrect!";
+        answerStatus.textContent = "❌ Incorrect!";
 
-}
+    }
 
-answerExplanation.textContent=question.explanation;
+    answerExplanation.textContent = question.explanation;
 
-explanationBox.style.display="block";
+    explanationBox.style.display = "block";
 
 }
 
 /*========== NEXT QUESTION ==========*/
-document.getElementById("nextQuestion").addEventListener("click",()=>{
+document.getElementById("nextQuestion").addEventListener("click", () => {
 
-if(!answered){
+    if (!answered) {
 
-alert("Please answer the current question.");
+        alert("Please answer the current question.");
 
-return;
+        return;
 
-}
+    }
 
-currentQuestion++;
+    currentQuestion++;
 
-if(currentQuestion>=filteredQuestions.length){
+    if (currentQuestion >= filteredQuestions.length) {
 
-showResult();
+        showResult();
 
-}else{
+    } else {
 
-loadQuestion();
+        loadQuestion();
 
-}
+    }
 
 });
 
 /*========== PREVIOUS QUESTION ==========*/
-document.getElementById("prevQuestion").addEventListener("click",()=>{
+document.getElementById("prevQuestion").addEventListener("click", () => {
 
-if(currentQuestion===0) return;
+    if (currentQuestion === 0) return;
 
-currentQuestion--;
+    currentQuestion--;
 
-loadQuestion();
+    loadQuestion();
 
 });
 
 /*========== SHOW RESULT ==========*/
-function showResult(){
+function showResult() {
 
-clearInterval(timerInterval);
+    clearInterval(timerInterval);
 
-quizContainer.style.display="none";
+    quizContainer.style.display = "none";
 
-resultContainer.style.display="block";
+    resultContainer.style.display = "block";
 
-const total=filteredQuestions.length;
+    const total = filteredQuestions.length;
 
-const percentage=Math.round((score/total)*100);
+    const percentage = Math.round((score / total) * 100);
 
-document.getElementById("score").textContent=`${score} / ${total}`;
+    document.getElementById("score").textContent = `${score} / ${total}`;
 
-document.getElementById("percentage").textContent=`${percentage}%`;
+    document.getElementById("percentage").textContent = `${percentage}%`;
 
-document.getElementById("correctAnswers").textContent=score;
+    document.getElementById("correctAnswers").textContent = score;
 
-document.getElementById("wrongAnswers").textContent=total-score;
+    document.getElementById("wrongAnswers").textContent = total - score;
 
-document.getElementById("timeTaken").textContent=`${total*30-timeLeft}s`;
+    document.getElementById("timeTaken").textContent = `${total*30-timeLeft}s`;
 
-const message=document.getElementById("resultMessage");
+    const message = document.getElementById("resultMessage");
 
-if(percentage===100){
+    if (percentage === 100) {
 
-message.textContent="Outstanding! You're a Git Master!";
+        message.textContent = "Outstanding! You're a Git Master!";
 
-}else if(percentage>=80){
+    } else if (percentage >= 80) {
 
-message.textContent="Excellent work! You know Git really well.";
+        message.textContent = "Excellent work! You know Git really well.";
 
-}else if(percentage>=60){
+    } else if (percentage >= 60) {
 
-message.textContent="Good job! Keep practicing to improve.";
+        message.textContent = "Good job! Keep practicing to improve.";
 
-}else{
+    } else {
 
-message.textContent="Don't worry. Practice makes perfect!";
+        message.textContent = "Don't worry. Practice makes perfect!";
 
-}
+    }
 
-localStorage.setItem("bestScore",Math.max(score,Number(localStorage.getItem("bestScore")||0)));
+    localStorage.setItem("bestScore", Math.max(score, Number(localStorage.getItem("bestScore") || 0)));
 
 }
 
 /*========== RESTART QUIZ ==========*/
-document.getElementById("restartQuiz").addEventListener("click",()=>{
+document.getElementById("restartQuiz").addEventListener("click", () => {
 
-resultContainer.style.display="none";
+    resultContainer.style.display = "none";
 
-quizPage.style.display="block";
+    quizPage.style.display = "block";
 
-categoryBtns.forEach(btn=>btn.classList.remove("active"));
+    categoryBtns.forEach(btn => btn.classList.remove("active"));
 
-difficultyBtns.forEach(btn=>btn.classList.remove("active"));
+    difficultyBtns.forEach(btn => btn.classList.remove("active"));
 
-selectedCategory="";
+    selectedCategory = "";
 
-selectedDifficulty="";
+    selectedDifficulty = "";
 
-filteredQuestions=[];
+    filteredQuestions = [];
 
-currentQuestion=0;
+    currentQuestion = 0;
 
-score=0;
+    score = 0;
 
 });

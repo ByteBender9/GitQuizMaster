@@ -1,280 +1,280 @@
 /*========== MOBILE MENU ==========*/
-const menuBtn=document.querySelector(".menu-btn");
-const navLinks=document.querySelector(".nav-links");
+const menuBtn = document.querySelector(".menu-btn");
+const navLinks = document.querySelector(".nav-links");
 
-menuBtn?.addEventListener("click",()=>{
-  navLinks.classList.toggle("show-menu");
-  menuBtn.querySelector("i").classList.toggle("fa-bars");
-  menuBtn.querySelector("i").classList.toggle("fa-xmark");
+menuBtn ? .addEventListener("click", () => {
+    navLinks.classList.toggle("show-menu");
+    menuBtn.querySelector("i").classList.toggle("fa-bars");
+    menuBtn.querySelector("i").classList.toggle("fa-xmark");
 });
 
 /*========== CLOSE MENU ==========*/
-document.querySelectorAll(".nav-links a").forEach(link=>{
-  link.addEventListener("click",()=>{
-    navLinks.classList.remove("show-menu");
-    menuBtn.querySelector("i").classList.add("fa-bars");
-    menuBtn.querySelector("i").classList.remove("fa-xmark");
-  });
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("show-menu");
+        menuBtn.querySelector("i").classList.add("fa-bars");
+        menuBtn.querySelector("i").classList.remove("fa-xmark");
+    });
 });
 
 /*========== THEME TOGGLE ==========*/
-const themeBtn=document.getElementById("theme-btn");
-const body=document.body;
+const themeBtn = document.getElementById("theme-btn");
+const body = document.body;
 
-const savedTheme=localStorage.getItem("theme");
+const savedTheme = localStorage.getItem("theme");
 
-if(savedTheme==="light"){
-  body.classList.add("light-theme");
-  themeBtn.innerHTML='<i class="fa-solid fa-sun"></i>';
+if (savedTheme === "light") {
+    body.classList.add("light-theme");
+    themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
 }
 
-themeBtn?.addEventListener("click",()=>{
-  body.classList.toggle("light-theme");
+themeBtn ? .addEventListener("click", () => {
+    body.classList.toggle("light-theme");
 
-  if(body.classList.contains("light-theme")){
-    localStorage.setItem("theme","light");
-    themeBtn.innerHTML='<i class="fa-solid fa-sun"></i>';
-  }else{
-    localStorage.setItem("theme","dark");
-    themeBtn.innerHTML='<i class="fa-solid fa-moon"></i>';
-  }
+    if (body.classList.contains("light-theme")) {
+        localStorage.setItem("theme", "light");
+        themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    } else {
+        localStorage.setItem("theme", "dark");
+        themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    }
 });
 
 /*========== SCROLL TOP ==========*/
-const scrollTopBtn=document.getElementById("scrollTop");
+const scrollTopBtn = document.getElementById("scrollTop");
 
-window.addEventListener("scroll",()=>{
-  if(window.scrollY>400){
-    scrollTopBtn.style.opacity="1";
-    scrollTopBtn.style.pointerEvents="auto";
-    scrollTopBtn.style.transform="translateY(0)";
-  }else{
-    scrollTopBtn.style.opacity="0";
-    scrollTopBtn.style.pointerEvents="none";
-    scrollTopBtn.style.transform="translateY(20px)";
-  }
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+        scrollTopBtn.style.opacity = "1";
+        scrollTopBtn.style.pointerEvents = "auto";
+        scrollTopBtn.style.transform = "translateY(0)";
+    } else {
+        scrollTopBtn.style.opacity = "0";
+        scrollTopBtn.style.pointerEvents = "none";
+        scrollTopBtn.style.transform = "translateY(20px)";
+    }
 });
 
-scrollTopBtn?.addEventListener("click",()=>{
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+scrollTopBtn ? .addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });
 
 /*========== HEADER SCROLL ==========*/
-const header=document.querySelector("header");
+const header = document.querySelector("header");
 
-window.addEventListener("scroll",()=>{
-  if(window.scrollY>50){
-    header.style.background="rgba(5,8,22,.92)";
-    header.style.boxShadow="0 8px 30px rgba(0,0,0,.35)";
-  }else{
-    header.style.background="rgba(5,8,22,.75)";
-    header.style.boxShadow="none";
-  }
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        header.style.background = "rgba(5,8,22,.92)";
+        header.style.boxShadow = "0 8px 30px rgba(0,0,0,.35)";
+    } else {
+        header.style.background = "rgba(5,8,22,.75)";
+        header.style.boxShadow = "none";
+    }
 });
 
 /*========== ACTIVE LINKS ==========*/
-const sections=document.querySelectorAll("section[id]");
-const links=document.querySelectorAll(".nav-links a");
+const sections = document.querySelectorAll("section[id]");
+const links = document.querySelectorAll(".nav-links a");
 
-window.addEventListener("scroll",()=>{
-  let current="";
+window.addEventListener("scroll", () => {
+    let current = "";
 
-  sections.forEach(section=>{
-    const top=section.offsetTop-120;
-    const height=section.offsetHeight;
+    sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        const height = section.offsetHeight;
 
-    if(window.scrollY>=top&&window.scrollY<top+height){
-      current=section.getAttribute("id");
-    }
-  });
+        if (window.scrollY >= top && window.scrollY < top + height) {
+            current = section.getAttribute("id");
+        }
+    });
 
-  links.forEach(link=>{
-    link.classList.remove("active");
+    links.forEach(link => {
+        link.classList.remove("active");
 
-    if(link.getAttribute("href")==="#"+current){
-      link.classList.add("active");
-    }
-  });
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
 });
 
 /*========== SMOOTH SCROLL ==========*/
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-  anchor.addEventListener("click",function(e){
-    const target=document.querySelector(this.getAttribute("href"));
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        const target = document.querySelector(this.getAttribute("href"));
 
-    if(target){
-      e.preventDefault();
-      target.scrollIntoView({
-        behavior:"smooth"
-      });
-    }
-  });
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    });
 });
 
 /*========== FAQ ACCORDION ==========*/
-const faqItems=document.querySelectorAll(".faq-item");
+const faqItems = document.querySelectorAll(".faq-item");
 
-faqItems.forEach(item=>{
-  const answer=item.querySelector("p");
-  answer.style.maxHeight="0px";
-  answer.style.overflow="hidden";
-  answer.style.transition=".35s ease";
+faqItems.forEach(item => {
+    const answer = item.querySelector("p");
+    answer.style.maxHeight = "0px";
+    answer.style.overflow = "hidden";
+    answer.style.transition = ".35s ease";
 
-  item.addEventListener("click",()=>{
-    const open=item.classList.contains("open");
+    item.addEventListener("click", () => {
+        const open = item.classList.contains("open");
 
-    faqItems.forEach(f=>{
-      f.classList.remove("open");
-      f.querySelector("p").style.maxHeight="0px";
+        faqItems.forEach(f => {
+            f.classList.remove("open");
+            f.querySelector("p").style.maxHeight = "0px";
+        });
+
+        if (!open) {
+            item.classList.add("open");
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        }
     });
-
-    if(!open){
-      item.classList.add("open");
-      answer.style.maxHeight=answer.scrollHeight+"px";
-    }
-  });
 });
 
 /*========== ANIMATED COUNTERS ==========*/
-const counters=document.querySelectorAll(".stat-card h2,.dashboard-card span");
+const counters = document.querySelectorAll(".stat-card h2,.dashboard-card span");
 
-const counterObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(!entry.isIntersecting) return;
+const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
 
-    const counter=entry.target;
-    const text=counter.innerText;
-    const target=parseInt(text.replace(/\D/g,""));
+        const counter = entry.target;
+        const text = counter.innerText;
+        const target = parseInt(text.replace(/\D/g, ""));
 
-    if(isNaN(target)) return;
+        if (isNaN(target)) return;
 
-    let current=0;
-    const increment=Math.max(1,Math.ceil(target/80));
+        let current = 0;
+        const increment = Math.max(1, Math.ceil(target / 80));
 
-    const update=()=>{
-      current+=increment;
+        const update = () => {
+            current += increment;
 
-      if(current>=target){
-        counter.innerText=text;
-      }else{
-        const suffix=text.replace(/[0-9]/g,"");
-        counter.innerText=current+suffix;
-        requestAnimationFrame(update);
-      }
-    };
+            if (current >= target) {
+                counter.innerText = text;
+            } else {
+                const suffix = text.replace(/[0-9]/g, "");
+                counter.innerText = current + suffix;
+                requestAnimationFrame(update);
+            }
+        };
 
-    update();
-    counterObserver.unobserve(counter);
-  });
+        update();
+        counterObserver.unobserve(counter);
+    });
 });
 
-counters.forEach(counter=>counterObserver.observe(counter));
+counters.forEach(counter => counterObserver.observe(counter));
 
 /*========== SCROLL REVEAL ==========*/
-const revealElements=document.querySelectorAll(
-".roadmap-card,.feature-card,.path-card,.practice-card,.dashboard-card,.command-card,.faq-item"
+const revealElements = document.querySelectorAll(
+    ".roadmap-card,.feature-card,.path-card,.practice-card,.dashboard-card,.command-card,.faq-item"
 );
 
-const revealObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-},{
-  threshold:.15
+const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: .15
 });
 
-revealElements.forEach(el=>{
-  el.classList.add("hidden");
-  revealObserver.observe(el);
+revealElements.forEach(el => {
+    el.classList.add("hidden");
+    revealObserver.observe(el);
 });
 
 /*========== HERO PARALLAX ==========*/
-const heroCard=document.querySelector(".git-card");
+const heroCard = document.querySelector(".git-card");
 
-window.addEventListener("mousemove",e=>{
-  if(!heroCard) return;
+window.addEventListener("mousemove", e => {
+    if (!heroCard) return;
 
-  const x=(window.innerWidth/2-e.clientX)/35;
-  const y=(window.innerHeight/2-e.clientY)/35;
+    const x = (window.innerWidth / 2 - e.clientX) / 35;
+    const y = (window.innerHeight / 2 - e.clientY) / 35;
 
-  heroCard.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`;
+    heroCard.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
 });
 
-window.addEventListener("mouseleave",()=>{
-  if(heroCard){
-    heroCard.style.transform="rotateX(0) rotateY(0)";
-  }
+window.addEventListener("mouseleave", () => {
+    if (heroCard) {
+        heroCard.style.transform = "rotateX(0) rotateY(0)";
+    }
 });
 
 /*========== TERMINAL TYPING ==========*/
-const terminal=document.querySelector(".terminal");
+const terminal = document.querySelector(".terminal");
 
-if(terminal){
+if (terminal) {
 
-const commands=[
-"$ git init",
-"$ git add .",
-'$ git commit -m "First Commit"',
-"$ git branch feature-ui",
-"$ git checkout feature-ui",
-"$ git push origin main"
-];
+    const commands = [
+        "$ git init",
+        "$ git add .",
+        '$ git commit -m "First Commit"',
+        "$ git branch feature-ui",
+        "$ git checkout feature-ui",
+        "$ git push origin main"
+    ];
 
-let commandIndex=0;
+    let commandIndex = 0;
 
-setInterval(()=>{
+    setInterval(() => {
 
-terminal.innerHTML="";
+        terminal.innerHTML = "";
 
-for(let i=0;i<=commandIndex;i++){
+        for (let i = 0; i <= commandIndex; i++) {
 
-const line=document.createElement("span");
-line.textContent=commands[i];
-terminal.appendChild(line);
+            const line = document.createElement("span");
+            line.textContent = commands[i];
+            terminal.appendChild(line);
 
-}
+        }
 
-commandIndex++;
+        commandIndex++;
 
-if(commandIndex===commands.length){
-commandIndex=0;
-}
+        if (commandIndex === commands.length) {
+            commandIndex = 0;
+        }
 
-},2000);
+    }, 2000);
 
 }
 
 /*========== FLOATING EFFECT ==========*/
-document.querySelectorAll(".stat-card,.feature-card,.practice-card").forEach(card=>{
+document.querySelectorAll(".stat-card,.feature-card,.practice-card").forEach(card => {
 
-card.addEventListener("mouseenter",()=>{
+    card.addEventListener("mouseenter", () => {
 
-card.style.transform="translateY(-12px) scale(1.02)";
+        card.style.transform = "translateY(-12px) scale(1.02)";
 
-});
+    });
 
-card.addEventListener("mouseleave",()=>{
+    card.addEventListener("mouseleave", () => {
 
-card.style.transform="translateY(0) scale(1)";
+        card.style.transform = "translateY(0) scale(1)";
 
-});
+    });
 
 });
 
 /*========== RANDOM GLOW ==========*/
-setInterval(()=>{
+setInterval(() => {
 
-const cards=document.querySelectorAll(".roadmap-card,.path-card,.dashboard-card");
+    const cards = document.querySelectorAll(".roadmap-card,.path-card,.dashboard-card");
 
-const random=Math.floor(Math.random()*cards.length);
+    const random = Math.floor(Math.random() * cards.length);
 
-cards.forEach(card=>card.classList.remove("glow"));
+    cards.forEach(card => card.classList.remove("glow"));
 
-cards[random]?.classList.add("glow");
+    cards[random] ? .classList.add("glow");
 
-},2500);
+}, 2500);
